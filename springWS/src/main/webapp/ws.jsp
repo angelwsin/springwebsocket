@@ -5,7 +5,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="http://localhost/springWS/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/sockjs-client/1.0.3/sockjs.min.js"></script>
 <title>Insert title here</title>
 <table>
   <tr>
@@ -57,7 +58,8 @@ function send(data)
 }
 function startWebSocket()
 {   
-    ws = new WebSocket("ws://" + location.host + "/springWS/ws/chat/"+username);
+  //  ws = new WebSocket("ws://" + location.host + "/springWS/ws/chat/"+username);
+   ws = new WebSocket("ws://localhost/springWS/myHandler");
     ws.onopen = function(){
         console.log("success open");
         $("#sendbutton").attr("disabled", false);

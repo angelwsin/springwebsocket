@@ -14,19 +14,25 @@
                      http://www.springframework.org/schema/tx
                      http://www.springframework.org/schema/tx/spring-tx.xsd
                      http://www.springframework.org/schema/websocket
-                      http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+                      http://www.springframework.org/schema/websocket/spring-websocket.xsd">
+                      <!-- 这个重点，标注必须加，websocket用到-->
+	<bean id="byteArrayHttpMessageConverter"
+		class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+		
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
          <context:component-scan base-package="com.ws"/>
-       <websocket:handlers>
-        <websocket:mapping path="/myHandler" handler="myHandler"/>
-        <!-- <websocket:sockjs/>  -->
-         <websocket:handshake-interceptors>
-            <bean class="com.ws.handshake.MyHandshakeInterceptor"/>
-        </websocket:handshake-interceptors> 
-    </websocket:handlers>
-
-    <bean id="myHandler" class="com.ws.handler.MyTextHandler"/>
-   <bean class="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean">
-        <property name="maxTextMessageBufferSize" value="8192"/>
-        <property name="maxBinaryMessageBufferSize" value="8192"/>
-    </bean>
+  
+   
 </beans>

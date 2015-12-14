@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
- <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+<script type="text/javascript" src="http://localhost/SpringwebSocket/js/jquery-2.1.4.js"></script>
+ <script src="http://cdn.bootcss.com/sockjs-client/1.0.3/sockjs.min.js"></script>
 <title>Insert title here</title>
  <style type="text/css">  
         #connect-container {  
